@@ -1,0 +1,32 @@
+{
+  "name": "email-webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack -w",
+    "wds-cli": "./node_modules/.bin/webpack-dev-server --inline --hot --module-bind 'css=style-loader!css-loader'  --module-bind 'jsx=react-hot-loader!babel-loader' --config webpack.dev-cli.config.js",
+    "wds": "./node_modules/.bin/webpack-dev-server --config webpack.dev.config.js"
+  },
+  "author": "Azat Mardan",
+  "license": "MIT",
+  "babel": {
+    "presets": [
+      "react"
+    ]
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "6.26.3",
+    "babel-loader": "8.0.5",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "2.1.0",
+    "react": "16.8.3",
+    "react-dom": "16.8.3",
+    "react-hot-loader": "4.7.1",
+    "style-loader": "0.23.1",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "3.2.1"
+  }
+}

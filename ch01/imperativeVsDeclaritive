@@ -1,0 +1,44 @@
+// imperative functionality, linear
+var arr = [1, 2, 3, 4, 5, 6]
+    arr2 = []
+for (var i=0;i < arr.length; i++) {
+    arr2[i] = arr[i] * 2 
+    }
+console.log("a", arr2)
+
+//declaritive functionality, non-linear
+var arr = [1, 2, 3, 4, 5, 6],
+    arr2 = arr.map(function(v, i){ return v*2}) //builtin map function
+
+console.log('b',arr2)
+var getNestedValueImperatively = function(object, propertyName) {
+    var currentObject = object
+    var propertyName = propertyName.split('.')
+    var maxNestedLevel = propertyNameList.length
+    var currentNestedLevel
+
+    for (currentNestedLevel = 0; currentNestedLevel< maxNestedLevel; currentNestedLevel ++) {
+        if (!currentObejct || typeof currentObject === 'undefined')
+            return undefined
+        currentObject = currentObject [propertyNameList[currentNestedLevel]]
+    }
+    return currentObject
+var profile = {account : '1234567'}
+var profileDeep = {account: {number: '1234567'}}
+console.log(getNestedValueImperatively(profile, 'account') === '1234567')
+console.log(getNestedValueImperatively(profileDeep, 'account.number') === "1234567")
+
+// more imperative programing , ughhh
+
+
+}
+
+//declerative programming
+var getValue = function getValue(object, propertyName) {
+    return typeof object === 'undefined' ? undefined : object[propertyName]
+}
+var getNestedVAlueDeclaritively = function getNestedVAlueDeclaritively(object, propertyName) {
+    return propertyName.split('.').reduce(getValue, object)
+};
+console.log(getNestedVAlueDeclaritively({bar: 'baz'}, 'bar') === 'baz')
+console.log(getNestedVAlueDeclaritively({bar: { baz:1 }}, 'bar.baz') === 1)
